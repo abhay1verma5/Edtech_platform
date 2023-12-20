@@ -43,7 +43,7 @@ function Navbar() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    ;(async () => {
+     ;(async () => {
      
       setLoading(true)
       try {
@@ -64,7 +64,7 @@ function Navbar() {
   const matchRoute = (route) => {
     return matchPath({ path: route }, location.pathname)
   }
-
+ 
   return (
     <div
       className={`flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 ${

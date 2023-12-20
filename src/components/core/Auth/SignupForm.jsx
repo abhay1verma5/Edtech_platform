@@ -79,11 +79,11 @@ function SignupForm() {
       tabName: "Instructor",
       type: ACCOUNT_TYPE.INSTRUCTOR,
     },
-    {
-      id: 3,
-      tabName: "Admin",
-      type: ACCOUNT_TYPE.ADMIN,
-    },
+    // {
+    //   id: 3,
+    //   tabName: "Admin",
+    //   type: ACCOUNT_TYPE.ADMIN,
+    // },
   ]
 
   return (

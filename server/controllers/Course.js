@@ -74,6 +74,7 @@ exports.createCourse = async (req, res) => {
    // console.log("folder >>>",	process.env.FOLDER_NAME)
 		//console.log("ggg",thumbnailImage);
 		// Create a new course with the given details
+    console.log(categoryDetails._id,"jkjjhhj")
 		const newCourse = await Course.create({
 			courseName,
 			courseDescription,
@@ -104,7 +105,7 @@ exports.createCourse = async (req, res) => {
 			{ _id: category },
 			{
 				$push: {
-					course: newCourse._id,
+					courses: newCourse._id,
 				},
 			},
 			{ new: true }
@@ -128,7 +129,7 @@ exports.createCourse = async (req, res) => {
 
 // Edit Course Details
 exports.editCourse = async (req, res) => {
-  console.log("fkfk")
+  
   try {
     const { courseId } = req.body
     const updates = req.body

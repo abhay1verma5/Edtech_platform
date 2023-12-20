@@ -101,9 +101,9 @@ function CourseDetails() {
     createdAt,
   } = response.data?.courseDetails
 
-  const handleBuyCourse = () => {
+   const handleBuyCourse = () => {
     if (token) {
-      BuyCourse(token, [courseId], user, navigate, dispatch)
+      BuyCourse(token, [courseId], user,  navigate, dispatch)
       return
     }
     setConfirmationModal({
