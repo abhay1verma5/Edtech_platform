@@ -57,6 +57,12 @@ exports.signup = async (req, res) => {
         message: "User already exists. Please sign in to continue.",
       })
     }
+    if (password.length < 8) {
+      return res.status(400).json({
+        success: false,
+        message: "Password should be at least 8 characters long.",
+      });
+    }
 
     // Find the most recent OTP for the email
     const response = await OTP.find({ email }).sort({ createdAt: -1 }).limit(1)
