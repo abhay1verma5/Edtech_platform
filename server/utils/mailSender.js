@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer")
 
 const mailSender = async (email, title, body) => {
   try {
-            console.log("akslsls",process.env.MAIL_HOST)
+          
     let transporter = nodemailer.createTransport({
       service:"gmail",
       host: process.env.MAIL_HOST,
@@ -20,7 +20,7 @@ const mailSender = async (email, title, body) => {
       subject: `${title}`, // Subject line
       html: `${body}`, // html body
     })
-    console.log(info.response)
+   
     return info
   } catch (error) {
     console.log(error.message)

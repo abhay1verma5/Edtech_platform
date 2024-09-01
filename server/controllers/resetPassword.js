@@ -5,6 +5,7 @@ const crypto = require("crypto")
 exports.resetPasswordToken = async (req, res) => {
   try {
     const email = req.body.email
+    
     const user = await User.findOne({ email: email })
     if (!user) {
       return res.json({
