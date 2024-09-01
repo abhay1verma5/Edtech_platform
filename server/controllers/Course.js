@@ -74,7 +74,7 @@ exports.createCourse = async (req, res) => {
    // console.log("folder >>>",	process.env.FOLDER_NAME)
 		//console.log("ggg",thumbnailImage);
 		// Create a new course with the given details
-    console.log(categoryDetails._id,"jkjjhhj")
+   
 		const newCourse = await Course.create({
 			courseName,
 			courseDescription,
@@ -87,7 +87,7 @@ exports.createCourse = async (req, res) => {
 			status: status,
 			instructions: instructions,
 		});
-
+    console.log(newCourse,"jkjjhhj")
 		// Add the new course to the User Schema of the Instructor
 		await User.findByIdAndUpdate(
 			{
@@ -100,7 +100,7 @@ exports.createCourse = async (req, res) => {
 			},
 			{ new: true }
 		);
-		// Add the new course to the Categories
+		 // Add the new course to the Categories
 		await Category.findByIdAndUpdate(
 			{ _id: category },
 			{

@@ -18,6 +18,7 @@ function LoginForm() {
   const { email, password } = formData
 
   const handleOnChange = (e) => {
+    
     setFormData((prevData) => ({
       ...prevData,
       [e.target.name]: e.target.value,
